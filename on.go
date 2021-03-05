@@ -5,9 +5,9 @@ import (
 	"fmt"
 )
 
-type onEvent string
+type OnEvent string
 
-type OnEvents []onEvent
+type OnEvents []OnEvent
 
 type OnEventConfig struct {
 	CheckRun                 *OnCheckRun                 `json:"check_run,omitempty" yaml:"check_run,omitempty"`
@@ -33,180 +33,180 @@ type OnEventConfig struct {
 	Events                   map[string]interface{}      `json:",omitempty,inline" yaml:",omitempty,inline"`
 }
 
-// onCheckRunType
-type onCheckRunType string
+// OnCheckRunType
+type OnCheckRunType string
 
 const (
-	ON_CHECK_RUN_TYPE_CREATED          onCheckRunType = "created"
-	ON_CHECK_RUN_TYPE_RE_REQUESTED     onCheckRunType = "rerequested"
-	ON_CHECK_RUN_TYPE_COMPLETED        onCheckRunType = "completed"
-	ON_CHECK_RUN_TYPE_REQUESTED_ACTION onCheckRunType = "requested_action"
+	ON_CHECK_RUN_TYPE_CREATED          OnCheckRunType = "created"
+	ON_CHECK_RUN_TYPE_RE_REQUESTED     OnCheckRunType = "rerequested"
+	ON_CHECK_RUN_TYPE_COMPLETED        OnCheckRunType = "completed"
+	ON_CHECK_RUN_TYPE_REQUESTED_ACTION OnCheckRunType = "requested_action"
 )
 
 type OnCheckRun struct {
-	Types []onCheckRunType `json:",omitempty" yaml:",omitempty"`
+	Types []OnCheckRunType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onCheckSuiteType
-type onCheckSuiteType string
+// OnCheckSuiteType
+type OnCheckSuiteType string
 
 const (
-	ON_CHECK_SUITE_TYPE_COMPLETED    onCheckSuiteType = "completed"
-	ON_CHECK_SUITE_TYPE_REQUESTED    onCheckSuiteType = "requested"
-	ON_CHECK_SUITE_TYPE_RE_REQUESTED onCheckSuiteType = "rerequested"
+	ON_CHECK_SUITE_TYPE_COMPLETED    OnCheckSuiteType = "completed"
+	ON_CHECK_SUITE_TYPE_REQUESTED    OnCheckSuiteType = "requested"
+	ON_CHECK_SUITE_TYPE_RE_REQUESTED OnCheckSuiteType = "rerequested"
 )
 
 type OnCheckSuite struct {
-	Types []onCheckSuiteType `json:",omitempty" yaml:",omitempty"`
+	Types []OnCheckSuiteType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onIssueCommentType
-type onIssueCommentType string
+// OnIssueCommentType
+type OnIssueCommentType string
 
 const (
-	ON_ISSUE_COMMENT_TYPE_CREATED onIssueCommentType = "created"
-	ON_ISSUE_COMMENT_TYPE_EDITED  onIssueCommentType = "edited"
-	ON_ISSUE_COMMENT_TYPE_DELETED onIssueCommentType = "deleted"
+	ON_ISSUE_COMMENT_TYPE_CREATED OnIssueCommentType = "created"
+	ON_ISSUE_COMMENT_TYPE_EDITED  OnIssueCommentType = "edited"
+	ON_ISSUE_COMMENT_TYPE_DELETED OnIssueCommentType = "deleted"
 )
 
 type OnIssueComment struct {
-	Types []onIssueCommentType `json:",omitempty" yaml:",omitempty"`
+	Types []OnIssueCommentType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onIssuesType
-type onIssuesType string
+// OnIssuesType
+type OnIssuesType string
 
 const (
-	ON_ISSUES_TYPE_OPENED        onIssuesType = "opened"
-	ON_ISSUES_TYPE_EDITED        onIssuesType = "edited"
-	ON_ISSUES_TYPE_DELETED       onIssuesType = "deleted"
-	ON_ISSUES_TYPE_TRANSFERRED   onIssuesType = "transferred"
-	ON_ISSUES_TYPE_PINNED        onIssuesType = "pinned"
-	ON_ISSUES_TYPE_UNPINNED      onIssuesType = "unpinned"
-	ON_ISSUES_TYPE_CLOSED        onIssuesType = "closed"
-	ON_ISSUES_TYPE_REOPENED      onIssuesType = "reopened"
-	ON_ISSUES_TYPE_ASSIGNED      onIssuesType = "assigned"
-	ON_ISSUES_TYPE_UNASSIGNED    onIssuesType = "unassigned"
-	ON_ISSUES_TYPE_LABELED       onIssuesType = "labeled"
-	ON_ISSUES_TYPE_UNLABELED     onIssuesType = "unlabeled"
-	ON_ISSUES_TYPE_LOCKED        onIssuesType = "locked"
-	ON_ISSUES_TYPE_UNLOCKED      onIssuesType = "unlocked"
-	ON_ISSUES_TYPE_MILESTONED    onIssuesType = "milestoned"
-	ON_ISSUES_TYPE_DE_MILESTONED onIssuesType = "demilestoned"
+	ON_ISSUES_TYPE_OPENED        OnIssuesType = "opened"
+	ON_ISSUES_TYPE_EDITED        OnIssuesType = "edited"
+	ON_ISSUES_TYPE_DELETED       OnIssuesType = "deleted"
+	ON_ISSUES_TYPE_TRANSFERRED   OnIssuesType = "transferred"
+	ON_ISSUES_TYPE_PINNED        OnIssuesType = "pinned"
+	ON_ISSUES_TYPE_UNPINNED      OnIssuesType = "unpinned"
+	ON_ISSUES_TYPE_CLOSED        OnIssuesType = "closed"
+	ON_ISSUES_TYPE_REOPENED      OnIssuesType = "reopened"
+	ON_ISSUES_TYPE_ASSIGNED      OnIssuesType = "assigned"
+	ON_ISSUES_TYPE_UNASSIGNED    OnIssuesType = "unassigned"
+	ON_ISSUES_TYPE_LABELED       OnIssuesType = "labeled"
+	ON_ISSUES_TYPE_UNLABELED     OnIssuesType = "unlabeled"
+	ON_ISSUES_TYPE_LOCKED        OnIssuesType = "locked"
+	ON_ISSUES_TYPE_UNLOCKED      OnIssuesType = "unlocked"
+	ON_ISSUES_TYPE_MILESTONED    OnIssuesType = "milestoned"
+	ON_ISSUES_TYPE_DE_MILESTONED OnIssuesType = "demilestoned"
 )
 
 type OnIssues struct {
-	Types []onIssuesType `json:",omitempty" yaml:",omitempty"`
+	Types []OnIssuesType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onLabelType
-type onLabelType string
+// OnLabelType
+type OnLabelType string
 
 const (
-	ON_LABEL_TYPE_CREATED onLabelType = "created"
-	ON_LABEL_TYPE_EDITED  onLabelType = "edited"
-	ON_LABEL_TYPE_DELETED onLabelType = "deleted"
+	ON_LABEL_TYPE_CREATED OnLabelType = "created"
+	ON_LABEL_TYPE_EDITED  OnLabelType = "edited"
+	ON_LABEL_TYPE_DELETED OnLabelType = "deleted"
 )
 
 type OnLabel struct {
-	Types []onLabelType `json:",omitempty" yaml:",omitempty"`
+	Types []OnLabelType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onMemberType
-type onMemberType string
+// OnMemberType
+type OnMemberType string
 
 const (
-	ON_MEMBER_TYPE_ADDED   onMemberType = "added"
-	ON_MEMBER_TYPE_EDITED  onMemberType = "edited"
-	ON_MEMBER_TYPE_DELETED onMemberType = "deleted"
+	ON_MEMBER_TYPE_ADDED   OnMemberType = "added"
+	ON_MEMBER_TYPE_EDITED  OnMemberType = "edited"
+	ON_MEMBER_TYPE_DELETED OnMemberType = "deleted"
 )
 
 type OnMember struct {
-	Types []onMemberType `json:",omitempty" yaml:",omitempty"`
+	Types []OnMemberType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onMilestoneType
-type onMilestoneType string
+// OnMilestoneType
+type OnMilestoneType string
 
 const (
-	ON_MILESTONE_TYPE_CREATED onMilestoneType = "created"
-	ON_MILESTONE_TYPE_CLOSED  onMilestoneType = "closed"
-	ON_MILESTONE_TYPE_OPENED  onMilestoneType = "opened"
-	ON_MILESTONE_TYPE_EDITED  onMilestoneType = "edited"
-	ON_MILESTONE_TYPE_DELETED onMilestoneType = "deleted"
+	ON_MILESTONE_TYPE_CREATED OnMilestoneType = "created"
+	ON_MILESTONE_TYPE_CLOSED  OnMilestoneType = "closed"
+	ON_MILESTONE_TYPE_OPENED  OnMilestoneType = "opened"
+	ON_MILESTONE_TYPE_EDITED  OnMilestoneType = "edited"
+	ON_MILESTONE_TYPE_DELETED OnMilestoneType = "deleted"
 )
 
 type OnMilestone struct {
-	Types []onMilestoneType `json:",omitempty" yaml:",omitempty"`
+	Types []OnMilestoneType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onProjectType
-type onProjectType string
+// OnProjectType
+type OnProjectType string
 
 const (
-	ON_PROJECT_TYPE_CREATED  onProjectType = "created"
-	ON_PROJECT_TYPE_UPDATED  onProjectType = "updated"
-	ON_PROJECT_TYPE_CLOSED   onProjectType = "closed"
-	ON_PROJECT_TYPE_REOPENED onProjectType = "reopened"
-	ON_PROJECT_TYPE_EDITED   onProjectType = "edited"
-	ON_PROJECT_TYPE_DELETED  onProjectType = "deleted"
+	ON_PROJECT_TYPE_CREATED  OnProjectType = "created"
+	ON_PROJECT_TYPE_UPDATED  OnProjectType = "updated"
+	ON_PROJECT_TYPE_CLOSED   OnProjectType = "closed"
+	ON_PROJECT_TYPE_REOPENED OnProjectType = "reopened"
+	ON_PROJECT_TYPE_EDITED   OnProjectType = "edited"
+	ON_PROJECT_TYPE_DELETED  OnProjectType = "deleted"
 )
 
 type OnProject struct {
-	Types []onProjectType `json:",omitempty" yaml:",omitempty"`
+	Types []OnProjectType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onProjectCardType
-type onProjectCardType string
+// OnProjectCardType
+type OnProjectCardType string
 
 const (
-	ON_PROJECT_CARD_TYPE_CREATED   onProjectCardType = "created"
-	ON_PROJECT_CARD_TYPE_MOVED     onProjectCardType = "moved"
-	ON_PROJECT_CARD_TYPE_CONVERTED onProjectCardType = "converted"
-	ON_PROJECT_CARD_TYPE_EDITED    onProjectCardType = "edited"
-	ON_PROJECT_CARD_TYPE_DELETED   onProjectCardType = "deleted"
+	ON_PROJECT_CARD_TYPE_CREATED   OnProjectCardType = "created"
+	ON_PROJECT_CARD_TYPE_MOVED     OnProjectCardType = "moved"
+	ON_PROJECT_CARD_TYPE_CONVERTED OnProjectCardType = "converted"
+	ON_PROJECT_CARD_TYPE_EDITED    OnProjectCardType = "edited"
+	ON_PROJECT_CARD_TYPE_DELETED   OnProjectCardType = "deleted"
 )
 
 type OnProjectCard struct {
-	Types []onProjectCardType `json:",omitempty" yaml:",omitempty"`
+	Types []OnProjectCardType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onProjectColumnType
-type onProjectColumnType string
+// OnProjectColumnType
+type OnProjectColumnType string
 
 const (
-	ON_PROJECT_COLUMN_TYPE_CREATED onProjectColumnType = "created"
-	ON_PROJECT_COLUMN_TYPE_UPDATED onProjectColumnType = "updated"
-	ON_PROJECT_COLUMN_TYPE_MOVED   onProjectColumnType = "moved"
-	ON_PROJECT_COLUMN_TYPE_DELETED onProjectColumnType = "deleted"
+	ON_PROJECT_COLUMN_TYPE_CREATED OnProjectColumnType = "created"
+	ON_PROJECT_COLUMN_TYPE_UPDATED OnProjectColumnType = "updated"
+	ON_PROJECT_COLUMN_TYPE_MOVED   OnProjectColumnType = "moved"
+	ON_PROJECT_COLUMN_TYPE_DELETED OnProjectColumnType = "deleted"
 )
 
 type OnProjectColumn struct {
-	Types []onProjectColumnType `json:",omitempty" yaml:",omitempty"`
+	Types []OnProjectColumnType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onPullRequestType
-type onPullRequestType string
+// OnPullRequestType
+type OnPullRequestType string
 
 const (
-	ON_PULL_REQUEST_TYPE_ASSIGNED               onPullRequestType = "assigned"
-	ON_PULL_REQUEST_TYPE_UNASSIGNED             onPullRequestType = "unassigned"
-	ON_PULL_REQUEST_TYPE_LABELED                onPullRequestType = "labeled"
-	ON_PULL_REQUEST_TYPE_UNLABELED              onPullRequestType = "unlabeled"
-	ON_PULL_REQUEST_TYPE_OPENED                 onPullRequestType = "opened"
-	ON_PULL_REQUEST_TYPE_EDITED                 onPullRequestType = "edited"
-	ON_PULL_REQUEST_TYPE_CLOSED                 onPullRequestType = "closed"
-	ON_PULL_REQUEST_TYPE_REOPENED               onPullRequestType = "reopened"
-	ON_PULL_REQUEST_TYPE_SYNCHRONIZE            onPullRequestType = "synchronize"
-	ON_PULL_REQUEST_TYPE_READY_FOR_REVIEW       onPullRequestType = "ready_for_review"
-	ON_PULL_REQUEST_TYPE_LOCKED                 onPullRequestType = "locked"
-	ON_PULL_REQUEST_TYPE_UNLOCKED               onPullRequestType = "unlocked"
-	ON_PULL_REQUEST_TYPE_REVIEW_REQUESTED       onPullRequestType = "review_requested"
-	ON_PULL_REQUEST_TYPE_REVIEW_REQUEST_REMOVED onPullRequestType = "review_request_removed"
+	ON_PULL_REQUEST_TYPE_ASSIGNED               OnPullRequestType = "assigned"
+	ON_PULL_REQUEST_TYPE_UNASSIGNED             OnPullRequestType = "unassigned"
+	ON_PULL_REQUEST_TYPE_LABELED                OnPullRequestType = "labeled"
+	ON_PULL_REQUEST_TYPE_UNLABELED              OnPullRequestType = "unlabeled"
+	ON_PULL_REQUEST_TYPE_OPENED                 OnPullRequestType = "opened"
+	ON_PULL_REQUEST_TYPE_EDITED                 OnPullRequestType = "edited"
+	ON_PULL_REQUEST_TYPE_CLOSED                 OnPullRequestType = "closed"
+	ON_PULL_REQUEST_TYPE_REOPENED               OnPullRequestType = "reopened"
+	ON_PULL_REQUEST_TYPE_SYNCHRONIZE            OnPullRequestType = "synchronize"
+	ON_PULL_REQUEST_TYPE_READY_FOR_REVIEW       OnPullRequestType = "ready_for_review"
+	ON_PULL_REQUEST_TYPE_LOCKED                 OnPullRequestType = "locked"
+	ON_PULL_REQUEST_TYPE_UNLOCKED               OnPullRequestType = "unlocked"
+	ON_PULL_REQUEST_TYPE_REVIEW_REQUESTED       OnPullRequestType = "review_requested"
+	ON_PULL_REQUEST_TYPE_REVIEW_REQUEST_REMOVED OnPullRequestType = "review_request_removed"
 )
 
 type OnPullRequest struct {
-	Types          []onPullRequestType `json:",omitempty" yaml:",omitempty"`
+	Types          []OnPullRequestType `json:",omitempty" yaml:",omitempty"`
 	Branches       []string            `json:",omitempty" yaml:",omitempty"`
 	BranchesIgnore []string            `json:"branches-ignore,omitempty" yaml:"branches-ignore,omitempty"`
 	Tags           []string            `json:",omitempty" yaml:",omitempty"`
@@ -215,54 +215,54 @@ type OnPullRequest struct {
 	PathsIgnore    []string            `json:"paths-ignore,omitempty" yaml:"paths-ignore,omitempty"`
 }
 
-// onPullRequestReviewType
-type onPullRequestReviewType string
+// OnPullRequestReviewType
+type OnPullRequestReviewType string
 
 const (
-	ON_PULL_REQUEST_REVIEW_TYPE_SUBMITTED onPullRequestReviewType = "submitted"
-	ON_PULL_REQUEST_REVIEW_TYPE_EDITED    onPullRequestReviewType = "edited"
-	ON_PULL_REQUEST_REVIEW_TYPE_DISMISSED onPullRequestReviewType = "dismissed"
+	ON_PULL_REQUEST_REVIEW_TYPE_SUBMITTED OnPullRequestReviewType = "submitted"
+	ON_PULL_REQUEST_REVIEW_TYPE_EDITED    OnPullRequestReviewType = "edited"
+	ON_PULL_REQUEST_REVIEW_TYPE_DISMISSED OnPullRequestReviewType = "dismissed"
 )
 
 type OnPullRequestReview struct {
-	Types []onPullRequestReviewType `json:",omitempty" yaml:",omitempty"`
+	Types []OnPullRequestReviewType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onPullRequestReviewCommentType
-type onPullRequestReviewCommentType string
+// OnPullRequestReviewCommentType
+type OnPullRequestReviewCommentType string
 
 const (
-	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_CREATED onPullRequestReviewCommentType = "created"
-	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_EDITED  onPullRequestReviewCommentType = "edited"
-	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_DELETED onPullRequestReviewCommentType = "deleted"
+	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_CREATED OnPullRequestReviewCommentType = "created"
+	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_EDITED  OnPullRequestReviewCommentType = "edited"
+	ON_PULL_REQUEST_REVIEW_COMMENT_TYPE_DELETED OnPullRequestReviewCommentType = "deleted"
 )
 
 type OnPullRequestReviewComment struct {
-	Types []onPullRequestReviewCommentType `json:",omitempty" yaml:",omitempty"`
+	Types []OnPullRequestReviewCommentType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onPullRequestTargetType
-type onPullRequestTargetType string
+// OnPullRequestTargetType
+type OnPullRequestTargetType string
 
 const (
-	ON_PULL_REQUEST_TARGET_TYPE_ASSIGNED               onPullRequestTargetType = "assigned"
-	ON_PULL_REQUEST_TARGET_TYPE_UNASSIGNED             onPullRequestTargetType = "unassigned"
-	ON_PULL_REQUEST_TARGET_TYPE_LABELED                onPullRequestTargetType = "labeled"
-	ON_PULL_REQUEST_TARGET_TYPE_UNLABELED              onPullRequestTargetType = "unlabeled"
-	ON_PULL_REQUEST_TARGET_TYPE_OPENED                 onPullRequestTargetType = "opened"
-	ON_PULL_REQUEST_TARGET_TYPE_EDITED                 onPullRequestTargetType = "edited"
-	ON_PULL_REQUEST_TARGET_TYPE_CLOSED                 onPullRequestTargetType = "closed"
-	ON_PULL_REQUEST_TARGET_TYPE_REOPENED               onPullRequestTargetType = "reopened"
-	ON_PULL_REQUEST_TARGET_TYPE_SYNCHRONIZE            onPullRequestTargetType = "synchronize"
-	ON_PULL_REQUEST_TARGET_TYPE_READY_FOR_REVIEW       onPullRequestTargetType = "ready_for_review"
-	ON_PULL_REQUEST_TARGET_TYPE_LOCKED                 onPullRequestTargetType = "locked"
-	ON_PULL_REQUEST_TARGET_TYPE_UNLOCKED               onPullRequestTargetType = "unlocked"
-	ON_PULL_REQUEST_TARGET_TYPE_REVIEW_REQUESTED       onPullRequestTargetType = "review_requested"
-	ON_PULL_REQUEST_TARGET_TYPE_REVIEW_REQUEST_REMOVED onPullRequestTargetType = "review_request_removed"
+	ON_PULL_REQUEST_TARGET_TYPE_ASSIGNED               OnPullRequestTargetType = "assigned"
+	ON_PULL_REQUEST_TARGET_TYPE_UNASSIGNED             OnPullRequestTargetType = "unassigned"
+	ON_PULL_REQUEST_TARGET_TYPE_LABELED                OnPullRequestTargetType = "labeled"
+	ON_PULL_REQUEST_TARGET_TYPE_UNLABELED              OnPullRequestTargetType = "unlabeled"
+	ON_PULL_REQUEST_TARGET_TYPE_OPENED                 OnPullRequestTargetType = "opened"
+	ON_PULL_REQUEST_TARGET_TYPE_EDITED                 OnPullRequestTargetType = "edited"
+	ON_PULL_REQUEST_TARGET_TYPE_CLOSED                 OnPullRequestTargetType = "closed"
+	ON_PULL_REQUEST_TARGET_TYPE_REOPENED               OnPullRequestTargetType = "reopened"
+	ON_PULL_REQUEST_TARGET_TYPE_SYNCHRONIZE            OnPullRequestTargetType = "synchronize"
+	ON_PULL_REQUEST_TARGET_TYPE_READY_FOR_REVIEW       OnPullRequestTargetType = "ready_for_review"
+	ON_PULL_REQUEST_TARGET_TYPE_LOCKED                 OnPullRequestTargetType = "locked"
+	ON_PULL_REQUEST_TARGET_TYPE_UNLOCKED               OnPullRequestTargetType = "unlocked"
+	ON_PULL_REQUEST_TARGET_TYPE_REVIEW_REQUESTED       OnPullRequestTargetType = "review_requested"
+	ON_PULL_REQUEST_TARGET_TYPE_REVIEW_REQUEST_REMOVED OnPullRequestTargetType = "review_request_removed"
 )
 
 type OnPullRequestTarget struct {
-	Types          []onPullRequestTargetType `json:",omitempty" yaml:",omitempty"`
+	Types          []OnPullRequestTargetType `json:",omitempty" yaml:",omitempty"`
 	Branches       []string                  `json:",omitempty" yaml:",omitempty"`
 	BranchesIgnore []string                  `json:"branches-ignore,omitempty" yaml:"branches-ignore,omitempty"`
 	Tags           []string                  `json:",omitempty" yaml:",omitempty"`
@@ -281,33 +281,33 @@ type OnPush struct {
 	PathsIgnore    []string `json:"paths-ignore,omitempty" yaml:"paths-ignore,omitempty"`
 }
 
-// onRegistryPackageType
-type onRegistryPackageType string
+// OnRegistryPackageType
+type OnRegistryPackageType string
 
 const (
-	ON_REGISTRY_PACKAGE_TYPE_PUBLISHED onRegistryPackageType = "published"
-	ON_REGISTRY_PACKAGE_TYPE_UPDATED   onRegistryPackageType = "updated"
+	ON_REGISTRY_PACKAGE_TYPE_PUBLISHED OnRegistryPackageType = "published"
+	ON_REGISTRY_PACKAGE_TYPE_UPDATED   OnRegistryPackageType = "updated"
 )
 
 type OnRegistryPackage struct {
-	Types []onRegistryPackageType `json:",omitempty" yaml:",omitempty"`
+	Types []OnRegistryPackageType `json:",omitempty" yaml:",omitempty"`
 }
 
-// onReleaseType
-type onReleaseType string
+// OnReleaseType
+type OnReleaseType string
 
 const (
-	ON_RELEASE_TYPE_PUBLISHED   onReleaseType = "published"
-	ON_RELEASE_TYPE_UNPUBLISHED onReleaseType = "unpublished"
-	ON_RELEASE_TYPE_CREATED     onReleaseType = "created"
-	ON_RELEASE_TYPE_EDITED      onReleaseType = "edited"
-	ON_RELEASE_TYPE_DELETED     onReleaseType = "deleted"
-	ON_RELEASE_TYPE_PRERELEASED onReleaseType = "prereleased"
-	ON_RELEASE_TYPE_RELEASED    onReleaseType = "released"
+	ON_RELEASE_TYPE_PUBLISHED   OnReleaseType = "published"
+	ON_RELEASE_TYPE_UNPUBLISHED OnReleaseType = "unpublished"
+	ON_RELEASE_TYPE_CREATED     OnReleaseType = "created"
+	ON_RELEASE_TYPE_EDITED      OnReleaseType = "edited"
+	ON_RELEASE_TYPE_DELETED     OnReleaseType = "deleted"
+	ON_RELEASE_TYPE_PRERELEASED OnReleaseType = "prereleased"
+	ON_RELEASE_TYPE_RELEASED    OnReleaseType = "released"
 )
 
 type OnRelease struct {
-	Types []onReleaseType
+	Types []OnReleaseType
 }
 
 // OnWorkflowDispatch
@@ -323,16 +323,16 @@ type OnWorkflowDispatchInput struct {
 	Default            string `json:",omitempty" yaml:",omitempty"`
 }
 
-// onWorkflowRunType
-type onWorkflowRunType string
+// OnWorkflowRunType
+type OnWorkflowRunType string
 
 const (
-	ON_WORKFLOW_RUN_TYPE_REQUESTED onWorkflowRunType = "requested"
-	ON_WORKFLOW_RUN_TYPE_COMPLETED onWorkflowRunType = "completed"
+	ON_WORKFLOW_RUN_TYPE_REQUESTED OnWorkflowRunType = "requested"
+	ON_WORKFLOW_RUN_TYPE_COMPLETED OnWorkflowRunType = "completed"
 )
 
 type OnWorkflowRun struct {
-	Types          []onWorkflowRunType `json:",omitempty" yaml:",omitempty"`
+	Types          []OnWorkflowRunType `json:",omitempty" yaml:",omitempty"`
 	Workflows      []string            `json:",omitempty" yaml:",omitempty"`
 	Branches       []string            `json:",omitempty" yaml:",omitempty"`
 	BranchesIgnore []string            `json:"branches-ignore,omitempty" yaml:"branches-ignore,omitempty"`
@@ -345,41 +345,41 @@ type OnScheduleCron struct {
 }
 
 const (
-	ON_EVENT_CHECK_RUN                   onEvent = "check_run"
-	ON_EVENT_CHECK_SUITE                 onEvent = "check_suite"
-	ON_EVENT_CREATE                      onEvent = "create"
-	ON_EVENT_DELETE                      onEvent = "delete"
-	ON_EVENT_DEPLOYMENT                  onEvent = "deployment"
-	ON_EVENT_DEPLOYMENT_STATUS           onEvent = "deployment_status"
-	ON_EVENT_FORK                        onEvent = "fork"
-	ON_EVENT_GOLLUM                      onEvent = "gollum"
-	ON_EVENT_ISSUES                      onEvent = "issues"
-	ON_EVENT_ISSUE_COMMENT               onEvent = "issue_comment"
-	ON_EVENT_LABEL                       onEvent = "label"
-	ON_EVENT_MEMBER                      onEvent = "member"
-	ON_EVENT_MILESTONE                   onEvent = "milestone"
-	ON_EVENT_PAGE_BUILD                  onEvent = "page_build"
-	ON_EVENT_PROJECT                     onEvent = "project"
-	ON_EVENT_PROJECT_CARD                onEvent = "project_card"
-	ON_EVENT_PROJECT_COLUMN              onEvent = "project_column"
-	ON_EVENT_PUBLIC                      onEvent = "public"
-	ON_EVENT_PULL_REQUEST                onEvent = "pull_request"
-	ON_EVENT_PULL_REQUEST_REVIEW         onEvent = "pull_request_review"
-	ON_EVENT_PULL_REQUEST_REVIEW_COMMENT onEvent = "pull_request_review_comment"
-	ON_EVENT_PULL_REQUEST_TARGET         onEvent = "pull_request_target"
-	ON_EVENT_PUSH                        onEvent = "push"
-	ON_EVENT_REGISTRY_PACKAGE            onEvent = "registry_package"
-	ON_EVENT_RELEASE                     onEvent = "release"
-	ON_EVENT_REPOSITORY_DISPATCH         onEvent = "repository_dispatch"
-	ON_EVENT_STATUS                      onEvent = "status"
-	ON_EVENT_WATCH                       onEvent = "watch"
-	ON_EVENT_WORKFLOW_DISPATCH           onEvent = "workflow_dispatch"
-	ON_EVENT_WORKFLOW_RUN                onEvent = "workflow_run"
+	ON_EVENT_CHECK_RUN                   OnEvent = "check_run"
+	ON_EVENT_CHECK_SUITE                 OnEvent = "check_suite"
+	ON_EVENT_CREATE                      OnEvent = "create"
+	ON_EVENT_DELETE                      OnEvent = "delete"
+	ON_EVENT_DEPLOYMENT                  OnEvent = "deployment"
+	ON_EVENT_DEPLOYMENT_STATUS           OnEvent = "deployment_status"
+	ON_EVENT_FORK                        OnEvent = "fork"
+	ON_EVENT_GOLLUM                      OnEvent = "gollum"
+	ON_EVENT_ISSUES                      OnEvent = "issues"
+	ON_EVENT_ISSUE_COMMENT               OnEvent = "issue_comment"
+	ON_EVENT_LABEL                       OnEvent = "label"
+	ON_EVENT_MEMBER                      OnEvent = "member"
+	ON_EVENT_MILESTONE                   OnEvent = "milestone"
+	ON_EVENT_PAGE_BUILD                  OnEvent = "page_build"
+	ON_EVENT_PROJECT                     OnEvent = "project"
+	ON_EVENT_PROJECT_CARD                OnEvent = "project_card"
+	ON_EVENT_PROJECT_COLUMN              OnEvent = "project_column"
+	ON_EVENT_PUBLIC                      OnEvent = "public"
+	ON_EVENT_PULL_REQUEST                OnEvent = "pull_request"
+	ON_EVENT_PULL_REQUEST_REVIEW         OnEvent = "pull_request_review"
+	ON_EVENT_PULL_REQUEST_REVIEW_COMMENT OnEvent = "pull_request_review_comment"
+	ON_EVENT_PULL_REQUEST_TARGET         OnEvent = "pull_request_target"
+	ON_EVENT_PUSH                        OnEvent = "push"
+	ON_EVENT_REGISTRY_PACKAGE            OnEvent = "registry_package"
+	ON_EVENT_RELEASE                     OnEvent = "release"
+	ON_EVENT_REPOSITORY_DISPATCH         OnEvent = "repository_dispatch"
+	ON_EVENT_STATUS                      OnEvent = "status"
+	ON_EVENT_WATCH                       OnEvent = "watch"
+	ON_EVENT_WORKFLOW_DISPATCH           OnEvent = "workflow_dispatch"
+	ON_EVENT_WORKFLOW_RUN                OnEvent = "workflow_run"
 )
 
 func (o OnEventConfig) Validate() error {
 	for event := range o.Events {
-		v := onEvent(event)
+		v := OnEvent(event)
 		switch v {
 		case ON_EVENT_CHECK_RUN, ON_EVENT_CHECK_SUITE, ON_EVENT_CREATE, ON_EVENT_DELETE, ON_EVENT_DEPLOYMENT, ON_EVENT_DEPLOYMENT_STATUS, ON_EVENT_FORK, ON_EVENT_GOLLUM, ON_EVENT_ISSUES, ON_EVENT_ISSUE_COMMENT, ON_EVENT_LABEL, ON_EVENT_MEMBER, ON_EVENT_MILESTONE, ON_EVENT_PAGE_BUILD, ON_EVENT_PROJECT, ON_EVENT_PROJECT_CARD, ON_EVENT_PROJECT_COLUMN, ON_EVENT_PUBLIC, ON_EVENT_PULL_REQUEST, ON_EVENT_PULL_REQUEST_REVIEW, ON_EVENT_PULL_REQUEST_REVIEW_COMMENT, ON_EVENT_PULL_REQUEST_TARGET, ON_EVENT_PUSH, ON_EVENT_REGISTRY_PACKAGE, ON_EVENT_RELEASE, ON_EVENT_REPOSITORY_DISPATCH, ON_EVENT_STATUS, ON_EVENT_WATCH, ON_EVENT_WORKFLOW_DISPATCH, ON_EVENT_WORKFLOW_RUN:
 		default:

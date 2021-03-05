@@ -13,7 +13,7 @@ type Job struct {
 	Environment     *Environment           `json:",omitempty" yaml:",omitempty"`
 	If              string                 `json:",omitempty" yaml:",omitempty"`
 	Name            string                 `json:",omitempty" yaml:",omitempty"`
-	Needs           needs                  `json:",omitempty" yaml:",omitempty"`
+	Needs           Needs                  `json:",omitempty" yaml:",omitempty"`
 	Outputs         map[string]string      `json:",omitempty" yaml:",omitempty"`
 	RunsOn          RunsOn                 `json:"runs-on,omitempty" yaml:"runs-on,omitempty"`
 	Services        map[string]*Container  `json:",omitempty" yaml:",omitempty"`
@@ -22,7 +22,7 @@ type Job struct {
 	TimeoutMinutes  float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
 }
 
-type needs interface{}
+type Needs interface{}
 
 type RunsOn interface{}
 
@@ -92,7 +92,7 @@ func (j Job) MarshalYAML() (interface{}, error) {
 	return j, nil
 }
 
-func NewNeeds(jobNames ...string) needs {
+func NewNeeds(jobNames ...string) Needs {
 	for _, jobID := range jobNames {
 		if !jobIDRegex.Match([]byte(jobID)) {
 			return fmt.Errorf("invalid job_id \"%s\" for needs, expected id to match %s", jobID, JOB_ID_PATTERN)
