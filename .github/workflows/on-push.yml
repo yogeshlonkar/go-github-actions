@@ -15,6 +15,7 @@ jobs:
       - name: Go Linting
         uses: golangci/golangci-lint-action@v1.2.1
         with:
+          version: v1.38.0
           args: --max-issues-per-linter 0 --max-same-issues 0 --out-format line-number --timeout 240s
       - name: Setup Go environment
         uses: actions/setup-go@v2.1.3
