@@ -10,8 +10,10 @@ type Workflow struct {
 	Env      map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Jobs     map[string]*Job        `json:",omitempty" yaml:",omitempty"`
 	Name     string                 `json:",omitempty" yaml:",omitempty"`
-	On       interface{}            `json:",omitempty" yaml:",omitempty"`
+	On       On                     `json:",omitempty" yaml:",omitempty"`
 }
+
+type On interface{}
 
 func (w Workflow) Validate() error {
 	for jobID := range w.Jobs {
