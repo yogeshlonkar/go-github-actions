@@ -22,7 +22,7 @@ func (w Workflow) Validate() error {
 		}
 	}
 	switch v := w.On.(type) {
-	case OnEvent, OnEvents, OnEventConfig:
+	case OnEvent, OnEvents, OnEventConfig, *OnEventConfig:
 	default:
 		return fmt.Errorf("unexpected value \"%s\" for \"On\" expected OnEvent, OnEvents or OnEventConfig", v)
 	}
