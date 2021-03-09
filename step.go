@@ -13,13 +13,20 @@ type Step struct {
 	Run              string                 `json:",omitempty" yaml:",omitempty"`
 	Shell            shell                  `json:",omitempty" yaml:",omitempty"`
 	WorkingDirectory string                 `json:"working-directory,omitempty" yaml:"working-directory,omitempty"`
-	With             map[string]string      `json:",omitempty" yaml:",omitempty"`
+	With             map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	TimeoutMinutes   float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
 	ContinueOnError  interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
 	If               string                 `json:",omitempty" yaml:",omitempty"`
 }
 
 func (s Step) Validate() error {
+	for _, val := range s.With {
+		switch val.(type) {
+		case string, bool, float32, float64, int, int32, int64:
+		default:
+			return fmt.Errorf("invalid With value \"%s\", expected boolean, number or string", val)
+		}
+	}
 	switch v := s.ContinueOnError.(type) {
 	case bool, nil:
 	case string:
