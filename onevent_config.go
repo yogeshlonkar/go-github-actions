@@ -6,6 +6,7 @@ import (
 )
 
 type OnEventConfig struct {
+	Events                   map[string]interface{}      `json:",omitempty,inline" yaml:",omitempty,inline"`
 	CheckRun                 *OnCheckRun                 `json:"check_run,omitempty" yaml:"check_run,omitempty"`
 	CheckSuite               *OnCheckSuite               `json:"check_suite,omitempty" yaml:"check_suite,omitempty"`
 	IssueComment             *OnIssueComment             `json:"issue_comment,omitempty" yaml:"issue_comment,omitempty"`
@@ -26,7 +27,6 @@ type OnEventConfig struct {
 	Schedule                 []*OnScheduleCron           `json:",omitempty" yaml:",omitempty"`
 	WorkflowDispatch         *OnWorkflowDispatch         `json:"workflow_dispatch,omitempty" yaml:"workflow_dispatch,omitempty"`
 	WorkflowRun              *OnWorkflowRun              `json:"workflow_run,omitempty" yaml:"workflow_run,omitempty"`
-	Events                   map[string]interface{}      `json:",omitempty,inline" yaml:",omitempty,inline"`
 }
 
 // OnCheckRunType

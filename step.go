@@ -6,17 +6,17 @@ import (
 )
 
 type Step struct {
-	ContinueOnError  interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
-	Env              map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Id               string                 `json:",omitempty" yaml:",omitempty"`
-	If               string                 `json:",omitempty" yaml:",omitempty"`
 	Name             string                 `json:",omitempty" yaml:",omitempty"`
+	Uses             string                 `json:",omitempty" yaml:",omitempty"`
+	Env              map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Run              string                 `json:",omitempty" yaml:",omitempty"`
 	Shell            shell                  `json:",omitempty" yaml:",omitempty"`
-	TimeoutMinutes   float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
-	Uses             string                 `json:",omitempty" yaml:",omitempty"`
-	With             map[string]string      `json:",omitempty" yaml:",omitempty"`
 	WorkingDirectory string                 `json:"working-directory,omitempty" yaml:"working-directory,omitempty"`
+	With             map[string]string      `json:",omitempty" yaml:",omitempty"`
+	TimeoutMinutes   float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
+	ContinueOnError  interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
+	If               string                 `json:",omitempty" yaml:",omitempty"`
 }
 
 func (s Step) Validate() error {

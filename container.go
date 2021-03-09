@@ -6,11 +6,11 @@ import (
 )
 
 type Container struct {
-	Credentials *Credentials           `json:",omitempty" yaml:",omitempty"`
-	Env         map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Image       string                 `json:",omitempty" yaml:",omitempty"`
 	Options     string                 `json:",omitempty" yaml:",omitempty"`
+	Env         map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Ports       []interface{}          `json:",omitempty" yaml:",omitempty"`
+	Credentials *Credentials           `json:",omitempty" yaml:",omitempty"`
 	Volumes     []string               `json:",omitempty" yaml:",omitempty"`
 }
 

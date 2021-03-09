@@ -6,20 +6,20 @@ import (
 )
 
 type Job struct {
-	Container       *Container             `json:",omitempty" yaml:",omitempty"`
-	ContinueOnError interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
-	Defaults        *Defaults              `json:",omitempty" yaml:",omitempty"`
-	Env             map[string]interface{} `json:",omitempty" yaml:",omitempty"`
-	Environment     *Environment           `json:",omitempty" yaml:",omitempty"`
-	If              string                 `json:",omitempty" yaml:",omitempty"`
 	Name            string                 `json:",omitempty" yaml:",omitempty"`
 	Needs           Needs                  `json:",omitempty" yaml:",omitempty"`
-	Outputs         map[string]string      `json:",omitempty" yaml:",omitempty"`
 	RunsOn          RunsOn                 `json:"runs-on,omitempty" yaml:"runs-on,omitempty"`
-	Services        map[string]*Container  `json:",omitempty" yaml:",omitempty"`
+	Environment     *Environment           `json:",omitempty" yaml:",omitempty"`
+	Env             map[string]interface{} `json:",omitempty" yaml:",omitempty"`
+	Outputs         map[string]string      `json:",omitempty" yaml:",omitempty"`
+	Container       *Container             `json:",omitempty" yaml:",omitempty"`
+	Defaults        *Defaults              `json:",omitempty" yaml:",omitempty"`
 	Steps           []*Step                `json:",omitempty" yaml:",omitempty"`
+	Services        map[string]*Container  `json:",omitempty" yaml:",omitempty"`
 	Strategy        *Strategy              `json:",omitempty" yaml:",omitempty"`
 	TimeoutMinutes  float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
+	ContinueOnError interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
+	If              string                 `json:",omitempty" yaml:",omitempty"`
 }
 
 type Needs interface{}
@@ -32,9 +32,9 @@ type Environment struct {
 }
 
 type Strategy struct {
-	Matrix      *Matrix `json:",omitempty" yaml:",omitempty"`
 	FailFast    bool    `json:"fail-fast,omitempty" yaml:"fail-fast,omitempty"`
 	MaxParallel float64 `json:"max-parallel,omitempty" yaml:"max-parallel,omitempty"`
+	Matrix      *Matrix `json:",omitempty" yaml:",omitempty"`
 }
 
 type Matrix struct {

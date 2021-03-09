@@ -71,21 +71,7 @@ func TestWorkflow(t *testing.T) {
 		return
 	}
 	// t.Error("\n" + strings.ReplaceAll(strings.ReplaceAll(string(out), "{}", ""), "\"\"", ""))
-	expected := `defaults:
-  run:
-    shell: bash
-    working-directory: /home
-env:
-  ENV_1: 213
-  ENV_2: ABC
-  ENV_3: false
-jobs:
-  first-job:
-    steps:
-    - name: Echo Hello
-      run: echo "Hello There!"
-    - run: echo "Build something!"
-name: Test Workflow
+	expected := `name: Test Workflow
 "on":
   check_run:
     types:
@@ -103,6 +89,20 @@ name: Test Workflow
         description: something something
         required: false
   create: ""
+defaults:
+  run:
+    shell: bash
+    working-directory: /home
+env:
+  ENV_1: 213
+  ENV_2: ABC
+  ENV_3: false
+jobs:
+  first-job:
+    steps:
+    - name: Echo Hello
+      run: echo "Hello There!"
+    - run: echo "Build something!"
 `
 	got := string(out)
 	if diff := cmp.Diff(expected, got); diff != "" {

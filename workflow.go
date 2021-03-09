@@ -6,11 +6,11 @@ import (
 )
 
 type Workflow struct {
+	Name     string                 `json:",omitempty" yaml:",omitempty"`
+	On       On                     `json:",omitempty" yaml:",omitempty"`
 	Defaults *Defaults              `json:",omitempty" yaml:",omitempty"`
 	Env      map[string]interface{} `json:",omitempty" yaml:",omitempty"`
 	Jobs     map[string]*Job        `json:",omitempty" yaml:",omitempty"`
-	Name     string                 `json:",omitempty" yaml:",omitempty"`
-	On       On                     `json:",omitempty" yaml:",omitempty"`
 }
 
 type On interface{}
