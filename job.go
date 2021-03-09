@@ -9,17 +9,17 @@ type Job struct {
 	Name            string                 `json:",omitempty" yaml:",omitempty"`
 	Needs           Needs                  `json:",omitempty" yaml:",omitempty"`
 	RunsOn          RunsOn                 `json:"runs-on,omitempty" yaml:"runs-on,omitempty"`
+	TimeoutMinutes  float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
+	If              string                 `json:",omitempty" yaml:",omitempty"`
+	ContinueOnError interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
+	Container       *Container             `json:",omitempty" yaml:",omitempty"`
 	Environment     *Environment           `json:",omitempty" yaml:",omitempty"`
 	Env             map[string]interface{} `json:",omitempty" yaml:",omitempty"`
-	Outputs         map[string]string      `json:",omitempty" yaml:",omitempty"`
-	Container       *Container             `json:",omitempty" yaml:",omitempty"`
-	Defaults        *Defaults              `json:",omitempty" yaml:",omitempty"`
-	Steps           []*Step                `json:",omitempty" yaml:",omitempty"`
-	Services        map[string]*Container  `json:",omitempty" yaml:",omitempty"`
 	Strategy        *Strategy              `json:",omitempty" yaml:",omitempty"`
-	TimeoutMinutes  float64                `json:"timeout-minutes,omitempty" yaml:"timeout-minutes,omitempty"`
-	ContinueOnError interface{}            `json:"continue-on-error,omitempty" yaml:"continue-on-error,omitempty"`
-	If              string                 `json:",omitempty" yaml:",omitempty"`
+	Outputs         map[string]string      `json:",omitempty" yaml:",omitempty"`
+	Defaults        *Defaults              `json:",omitempty" yaml:",omitempty"`
+	Services        map[string]*Container  `json:",omitempty" yaml:",omitempty"`
+	Steps           []*Step                `json:",omitempty" yaml:",omitempty"`
 }
 
 type Needs interface{}
